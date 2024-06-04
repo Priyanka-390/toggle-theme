@@ -1,0 +1,18 @@
+:root{
+  --content: black;
+  --background: white;
+}
+
+
+[data-theme="orange"]{
+--background:orange;
+--content:black;
+}
+[data-theme="purple"]{
+--background:purple;
+--content:white;
+}
+[data-theme="pink"]{
+--background:pink;
+--content:white;
+}

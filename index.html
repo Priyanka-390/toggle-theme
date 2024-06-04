@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html data-theme="" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Toggle-theme</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "bgcolor":"var(--background)",
+            "content":"var(--content)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+    <section class="min-h-screen flex-col bg-bgcolor flex justify-center items-center">
+        <button id="togglebtn" class="bg-bgcolor border-content border-2 rounded-xl px-6 py-2 text-content text-2xl">Click-Me</button>
+        <p class="text-content py-4 text-4xl ">Click The Button Change Multiple Theme Of This Page</p>
+    </section>
+    <script>
+         document.getElementById("togglebtn").addEventListener("click", function () {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            if (currentTheme === "") {
+                document.documentElement.setAttribute("data-theme", "purple");
+            } else if (currentTheme === "purple") {
+                document.documentElement.setAttribute("data-theme", "orange");
+            } else if (currentTheme === "orange") {
+                document.documentElement.setAttribute("data-theme", "pink");
+            } else if (currentTheme === "pink") {
+                document.documentElement.setAttribute("data-theme", "");
+            }
+        });
+       
+        
+    </script>
+</body>
+</html>
